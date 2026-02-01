@@ -12,6 +12,7 @@ export default async function Home() {
 	async function fetchPosts() {
 		try {
 			const posts: Post[] = await prisma.post.findMany();
+			console.log("Fetched posts:", posts);
 			return posts;
 		} catch (e) {
 			console.error("Error fetching posts:", e);
