@@ -1,0 +1,23 @@
+version: "3.9"
+services:
+  db:
+    image: mysql:8.0 # Use a stable MySQL image version
+    environment:
+      MYSQL_DATABASE: mysql_stable_container
+      MYSQL_ROOT_PASSWORD: password
+      # Optional: set a user and password for a non-root user
+      # MYSQL_USER: your_user
+      # MYSQL_PASSWORD: your_password
+    ports:
+      - "3307:3306" # Map container port 3306 to host port 3306
+    volumes:
+      - db-data:/var/lib/mysql # Persist data in a Docker volume
+    networks:
+      - app-network
+
+volumes:
+  db-data:
+
+networks:
+  app-network:
+    driver: bridge
