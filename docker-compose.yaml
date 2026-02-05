@@ -9,7 +9,7 @@ services:
       # MYSQL_USER: your_user
       # MYSQL_PASSWORD: your_password
     ports:
-      - "3307:3306" # Map container port 3306 to host port 3306
+      - "3307:3306" # Map container port 3306 to host port 3307
     volumes:
       - db-data:/var/lib/mysql # Persist data in a Docker volume
     networks:
